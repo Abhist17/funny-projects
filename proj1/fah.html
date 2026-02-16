@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAHHH</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #111;
+            font-family: Arial, sans-serif;
+            user-select: none;
+        }
+
+        h1 {
+            color: #ffffff69;
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.1s;
+        }
+
+        .btn img {
+            width: 200px;
+            height: 200px;
+            border-radius: 20px;
+            object-fit: cover;
+        }
+
+        .btn:hover {
+            transform: scale(1.08);
+        }
+
+        .btn:active {
+            transform: scale(0.9);
+        }
+
+        .count {
+            margin-top: 30px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        .count span { color: #2583db; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <h1>aish karo</h1>
+    <button class="btn" id="btn">
+        <img src="https://cdn.cdnstep.com/gnyB7SxVOlVPC7IUgyso/4-1.thumb128.png" alt="Fahhh">
+    </button>
+    <p class="count">clicks: <span id="count">0</span></p>
+
+    <script>
+        const btn = document.getElementById('btn');
+        const countEl = document.getElementById('count');
+        let clicks = 0;
+
+        const sound = new Audio('https://www.myinstants.com/media/sounds/fahhhhhhhhhhhhhh.mp3');
+
+        function playFahhh() {
+            sound.currentTime = 0;
+            sound.play();
+        }
+
+        btn.addEventListener('click', () => {
+            clicks++;
+            countEl.textContent = clicks;
+            playFahhh();
+        });
+    </script>
+</body>
+</html>
